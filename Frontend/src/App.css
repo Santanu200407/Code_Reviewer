@@ -1,0 +1,90 @@
+*{
+  margin:0%;
+  padding:0%;
+  box-sizing:border-box;
+}
+html,
+body,
+#root{
+  height:100%;
+  width:100%;
+  background-color: #5b5a5a;
+}
+
+main{
+  height:100%;
+  width:100%;
+  padding:1.5rem;
+  display:flex;
+  gap:1rem;
+}
+main .left,
+main .right{
+  height:100%;
+  flex-basis:50%;
+  border-radius: 0.7rem;
+}
+main .left{
+  position:relative;
+  background-color: black;
+}
+.left .code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  background-color: #0c0c0c;
+
+  overflow: auto;          /* enable scrolling */
+  white-space: pre;        /* preserve formatting */
+  color: #ffffff;
+}
+.code pre,
+.code pre code {
+  margin: 0;
+  white-space: pre;        /* don't wrap code */
+}
+
+main .left .review{
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  background-color: rgb(219, 219, 255);
+  color: #000000;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+}
+main .right {
+  background-color: #343434;
+  padding: 1rem 2rem;
+  font-size: 0.85rem;
+  border-radius: 0.7rem;
+  color: #ffffff; 
+  /* force it to stay inside */
+  height: 100%;
+  overflow-y: auto;      /* vertical scroll */
+  overflow-x: hidden;    /* stop horizontal overflow */
+  word-break: break-word; /* break long words */
+  white-space: pre-wrap;  /* keep newlines, wrap text */
+}
+
+main .left .review:hover {
+  background-color: #4338ca;
+  transform: scale(1.03);
+}
+
+/* Active click effect */
+main .left .review:active {
+  background-color: #312e81;
+  transform: scale(0.97);
+}
+
+/* Disabled (loading) */
+main .left .review.disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}

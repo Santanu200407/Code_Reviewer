@@ -7,7 +7,7 @@ import axios from "axios"
 import Markdown from "react-markdown"
 import './App.css'
 import { useEffect } from 'react'
-import { autoBatchEnhancer } from '@reduxjs/toolkit'
+
 
 function App() {
   const [code, setCode] = useState(`function hello() {
@@ -38,7 +38,7 @@ async function reviewCode(){
               fontFamily: '"Fira code","Fira Mono",monospace',
               fontSize: 16,
               border: "1px solid #ddd",
-              overflow: autoBatchEnhancer,
+              overflow: auto,
               borderRadius: "5px",
               height: "100%",
               width: "100%"
